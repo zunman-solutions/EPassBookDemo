@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51F11441-B0E4-47DF-84BF-FDF1E376AB20}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EPassBook.DAL</RootNamespace>
+    <AssemblyName>EPassBook.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBModel\BenificiaryMaster.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\CityMaster.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Comment.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\CommentsHisory.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\CompanyMaster.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\DefaultComment.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\ELMAH_Error.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\EPassBookModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EPassBookModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\EPassBookModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\EPassBookModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EPassBookModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\GeoTaggingDetail.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\InstallmentDetail.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\InstallmentDetailsHistory.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\InstallmentRejection.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\InstallmentSigning.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\RoleMaster.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Split_Result.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\sp_GetInstallmentListViewForUsersRoles_Result.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\sp_GetSurveyDetailsByBenID_Result.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\StageInRole.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\UserInRole.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\UserMaster.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\WorkflowStage.cs">
+      <DependentUpon>EPassBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IService\IInstallmentRejectionService.cs" />
+    <Compile Include="IService\IUserInRolService.cs" />
+    <Compile Include="IService\IRoleMasterService .cs" />
+    <Compile Include="IService\ICityService.cs" />
+    <Compile Include="IService\IWorkFlowStagesService.cs" />
+    <Compile Include="IService\IInstallmentDetailService.cs" />
+    <Compile Include="IService\IBenificiaryService.cs" />
+    <Compile Include="IService\ICommentService.cs" />
+    <Compile Include="IService\IUserService.cs" />
+    <Compile Include="Repository\IGenericReporsitory.cs" />
+    <Compile Include="Service\CompanyMasterService.cs" />
+    <Compile Include="IService\ICompanyMasterService.cs" />
+    <Compile Include="Service\InstallmentRejectionService.cs" />
+    <Compile Include="Service\RoleMasterService.cs" />
+    <Compile Include="Service\CityMasterService.cs" />
+    <Compile Include="Service\UserInRoleService.cs" />
+    <Compile Include="Service\WorkFlowStagesService.cs" />
+    <Compile Include="Service\InstallmentDetailService.cs" />
+    <Compile Include="Service\BenificiaryService.cs" />
+    <Compile Include="Service\CommentService.cs" />
+    <Compile Include="UnitofWork\IUnitOfWork .cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="UnitofWork\UnitOfWork.cs" />
+    <Compile Include="Service\UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="DBModel\EPassBookModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EPassBookModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBModel\EPassBookModel.edmx.diagram">
+      <DependentUpon>EPassBookModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBModel\EPassBookModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EPassBookModel.edmx</DependentUpon>
+      <LastGenOutput>EPassBookModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBModel\EPassBookModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EPassBookModel.edmx</DependentUpon>
+      <LastGenOutput>EPassBookModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/EPassBook/v15/Server/sqlite3
+/EPassBook/obj/Release/Package/PackageTmp
+/EPassBook/obj/Release
+/EPassBook/libman.json
+*.JPG
+/EPassBook/obj/Debug
+/EPassBook.DAL/DBModel
+/EPassBook/Uploads/UploadedExcels

@@ -1,0 +1,101 @@
+﻿@model IEnumerable<EPassBook.Models.BeneficiaryViewModel>
+
+@{
+    ViewBag.Title = "BeneficiaryReport";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            BeneficiaryReport
+        </h1>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-dashboard"></i> @Html.ActionLink("Home", "Index", "Beneficiary")</li>
+            <li class="active">Beneficiary</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        @*<h3 class="box-title">Beneficiary Request</h3>*@
+                    </div>
+                    <div class="box-body">
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    @Html.Label("Select Stage")
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.DropDownList("list", TempData["Cities"] as List<SelectListItem>, "Select Stages", new { @class = "form-control", @Id = "selectstage" })
+                                    @*@Html.DropDownListFor(model => model.FirstOrDefault().CityMaster.CityName, TempData["Cities"] as List<SelectListItem>, "SELECT CITY", new { @class = "form-control", @Id = "selectCity" })*@
+                                </div>
+                            </div>
+
+                            <table id="beneficiarylist" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.BeneficairyName)
+                                        </th>
+
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.MobileNo)
+                                        </th>
+
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.AdharNo)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.CityMaster.CityName)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.BeneficairyName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MobileNo)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AdharNo)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CityMaster.CityName)
+                                        </td>
+
+                                    </tr>
+                                }
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+    </section>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#beneficiarylist').dataTable();
+        var dtBeneficiary = $('#beneficiarylist').dataTable();
+
+        $('#selectstage').on('change', function () {
+            debugger
+            var selectedValue = $(this).val();
+            if (selectedValue == "") {
+                window.ReloadPage();
+            }
+            else {
+                dtBeneficiary.fnFilter("^" + selectedValue + "$", 3, true);
+            }
+        });
+
+    });
+</script>
